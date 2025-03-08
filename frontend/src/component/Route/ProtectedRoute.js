@@ -38,7 +38,7 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({ isAdmin }) => {
   const { loading, isAuthenticated, user } = useSelector((state) => state.user);
- 
+  // console.log("isAdmin",isAdmin);
   // if (loading) {
   //   console.log("🔄 Waiting for authentication...");
   //   return null;
