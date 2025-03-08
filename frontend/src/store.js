@@ -41,7 +41,7 @@ const initialState = {
 
 const store = configureStore({
   reducer: {
-    products: productReducer, 
+    products: productsReducer, 
     productDetails: productDetailsReducer,
     user: userReducer,
     profile: profileReducer,
