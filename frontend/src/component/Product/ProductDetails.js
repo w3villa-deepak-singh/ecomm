@@ -34,9 +34,9 @@ const ProductDetails = () => {
     (state) => state.productDetails
   );
 
-  // const { success, error: reviewError } = useSelector(
-  //   (state) => state.newReview
-  // );
+  const { success, error: reviewError } = useSelector(
+    (state) => state.newReview
+  );
 
   // const options = {
   //   value: product.ratings,
@@ -74,15 +74,15 @@ const ProductDetails = () => {
   };
 
   const reviewSubmitHandler = () => {
-    // const myForm = new FormData();
+    const myForm = new FormData();
 
-    // myForm.set("rating", rating);
-    // myForm.set("comment", comment);
-    // myForm.set("productId", id);
+    myForm.set("rating", rating);
+    myForm.set("comment", comment);
+    myForm.set("productId", id);
 
-    // dispatch(newReview(myForm));
+    dispatch(newReview(myForm));
 
-    // setOpen(false);
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -91,19 +91,19 @@ const ProductDetails = () => {
       dispatch(clearErrors());
     }
 
-    // if (reviewError) {
-    //   toast.error(reviewError);
-    //   dispatch(clearErrors());
-    // }
+    if (reviewError) {
+      toast.error(reviewError);
+      dispatch(clearErrors());
+    }
 
-    // if (success) {
-    //   toast.success("Review Submitted Successfully");
-    //   dispatch({ type: NEW_REVIEW_RESET });
-    // }
+    if (success) {
+      toast.success("Review Submitted Successfully");
+      dispatch({ type: NEW_REVIEW_RESET });
+    }
     dispatch(getProductDetails(id));
 
-  // }, [dispatch, id, error, reviewError, success]);
-   }, [dispatch, id, error]);
+  }, [dispatch, id, error, reviewError, success]);
+  
   return (
     <Fragment>
       {loading ? (
@@ -179,7 +179,7 @@ const ProductDetails = () => {
 
           <h3 className="reviewsHeading">REVIEWS</h3>
 
-          {/* <Dialog
+          <Dialog
             aria-labelledby="simple-dialog-title"
             open={open}
             onClose={submitReviewToggle}
@@ -208,7 +208,7 @@ const ProductDetails = () => {
                 Submit
               </Button>
             </DialogActions>
-          </Dialog> */}
+          </Dialog> 
 
           {product.reviews && product.reviews[0] ? (
             <div className="reviews">
