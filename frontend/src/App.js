@@ -35,8 +35,8 @@ import ProductList from "./component/Admin/ProductList.js";
 import NewProduct from "./component/Admin/NewProduct";
 import UpdateProduct from "./component/Admin/UpdateProduct";
 import OrderList from "./component/Admin/OrderList";
-// import ProcessOrder from "./component/Admin/ProcessOrder";
-// import UsersList from "./component/Admin/UsersList";
+import ProcessOrder from "./component/Admin/ProcessOrder";
+import UsersList from "./component/Admin/UsersList";
 // import UpdateUser from "./component/Admin/UpdateUser";
 // import ProductReviews from "./component/Admin/ProductReviews";
 // import Contact from "./component/layout/Contact/Contact";
@@ -113,6 +113,8 @@ function App() {
           <Route exact path="/admin/product" isAdmin={true} element={<NewProduct />} /> 
           <Route exact path="/admin/product/:id" isAdmin={true} element={<UpdateProduct />} /> 
           <Route exact path="/admin/orders" isAdmin={true} element={<OrderList />} /> 
+          <Route exact path="/admin/order/:id" isAdmin={true} element={<ProcessOrder />} /> 
+          <Route exact path="/admin/users" isAdmin={true} element={<UsersList />} /> 
 
         </Route>
   
@@ -136,19 +138,8 @@ function App() {
       
   
 
-        {/* <ProtectedRoute
-          exact
-          path="/admin/order/:id"
-          isAdmin={true}
-          component={ProcessOrder}
-        /> */}
-        {/* <ProtectedRoute
-          exact
-          path="/admin/users"
-          isAdmin={true}
-          component={UsersList}
-        /> */}
 
+ 
         {/* <ProtectedRoute
           exact
           path="/admin/user/:id"
