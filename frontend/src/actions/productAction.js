@@ -197,7 +197,7 @@ export const getAllReviews = (id) => async (dispatch) => {
   try {
     dispatch({ type: ALL_REVIEW_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/reviews?id=${id}`);
+    const { data } = await axios.get(`/api/v1/reviews?productId=${id}`);
 
     dispatch({
       type: ALL_REVIEW_SUCCESS,
