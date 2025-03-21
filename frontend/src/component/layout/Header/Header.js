@@ -51,10 +51,10 @@ const Header = () => {
               <Link to="/products" className="nav-link" onClick={handleItemClick}>Products</Link> 
             </CNavItem>
             <CNavItem>
-              <Link to="/about" className="nav-link" onClick={handleItemClick}>Contact</Link> 
+              <Link to="/contact" className="nav-link" onClick={handleItemClick}>Contact</Link> 
             </CNavItem>
             <CNavItem>
-              <Link to="/contact" className="nav-link" onClick={handleItemClick}>About</Link>
+              <Link to="/about" className="nav-link" onClick={handleItemClick}>About</Link>
             </CNavItem>
         
           </CNavbarNav>

@@ -39,8 +39,8 @@ import ProcessOrder from "./component/Admin/ProcessOrder";
 import UsersList from "./component/Admin/UsersList";
 import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
-// import Contact from "./component/layout/Contact/Contact";
-// import About from "./component/layout/About/About";
+import Contact from "./component/layout/Contact/Contact";
+import About from "./component/layout/About/About";
 // import NotFound from "./component/layout/Not Found/NotFound";
 import WebFont from "webfontloader";
 
@@ -88,10 +88,9 @@ function App() {
          <Route exact path="/products" element={<Products />} />
         <Route path="/products/:keyword" element={<Products />} />
         <Route exact path="/search" element={<Search />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/about" element={<About />} />
 
-         {/* <Route exact path="/contact" component={Contact} /> */}
-
-        {/* <Route exact path="/about" component={About} /> */}
         <Route exact path="/password/forgot" element={<ForgotPassword />} />
         <Route exact path="/password/reset/:token" element={<ResetPassword />} />
         <Route exact path="/login" element={<LoginSignUp />} />
