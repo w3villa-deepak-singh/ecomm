@@ -107,6 +107,9 @@ function App() {
           <Route path="/success" element={<OrderSuccess />} />
           <Route exact path="/orders" element={<MyOrders />} />
           <Route exact path="/order/:id" element={<OrderDetails />} />
+        </Route>
+
+          <Route element={<ProtectedRoute isAdmin={true} />}>
           <Route isAdmin={true} exact path="/admin/dashboard" element={<Dashboard />} /> 
           <Route exact path="/admin/products" isAdmin={true} element={<ProductList />} /> 
           <Route exact path="/admin/product" isAdmin={true} element={<NewProduct />} /> 
