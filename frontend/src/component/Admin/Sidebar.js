@@ -2,8 +2,6 @@ import React from "react";
 import "./sidebar.css";
 import logo from "../../images/logo.png";
 import { Link, useNavigate } from "react-router-dom";
-// import { TreeView, TreeItem } from "@mui/lab";
-// import { TreeView } from '@mui/x-tree-view/TreeView';
 import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -28,34 +26,49 @@ const Sidebar = () => {
           <DashboardIcon /> Dashboard
         </p>
       </Link>
-      <Link>
-        <SimpleTreeView
-          defaultCollapseIcon={<ExpandMoreIcon />}
-          defaultExpandIcon={<ImportExportIcon />}
-        >
-          <TreeItem itemId="1" label="Products">
-            {/* <Link to="/admin/products">
-              <TreeItem nodeId="2" label="All" icon={<PostAddIcon />} />
-            </Link>
 
-            <Link to="/admin/product">
-              <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
-            </Link> */}
+        <SimpleTreeView
+          // defaultCollapseIcon={<ExpandMoreIcon />}
+          // defaultExpandIcon={<ImportExportIcon />}
+          aria-label="Products navigator"
+          slots={{
+            expandIcon: ImportExportIcon,
+            collapseIcon: ExpandMoreIcon
+          }}
+
+        >
+          <TreeItem 
+          itemId="1"
+           label="Products">
              <TreeItem
                itemId="2"
-               label="All"
-               icon={<PostAddIcon />}
-               onClick={() => navigate("/admin/products")}
+              //  label="All"
+              //  icon={<PostAddIcon />}
+              //  onClick={() => navigate("/admin/products")}
+              label={
+                <div onClick={() => navigate("/admin/products")}>
+                  <PostAddIcon style={{ marginRight: '8px' }} />
+                  All
+                </div>
+              }
+
              />
              <TreeItem
                itemId="3"
-               label="Create"
-               icon={<AddIcon />}
-               onClick={() => navigate("/admin/product")}
+              //  label="Create"
+              //  icon={<AddIcon />}
+              //  onClick={() => navigate("/admin/product")}
+              label={
+                <div onClick={() => navigate("/admin/product")}>
+                  <AddIcon style={{ marginRight: '8px' }} />
+                  Create
+                </div>
+              }
+
              />
           </TreeItem>
         </SimpleTreeView>
-      </Link>
+
       <Link to="/admin/orders">
         <p>
           <ListAltIcon />

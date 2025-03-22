@@ -39,3 +39,58 @@
   .MuiTypography-root {
     background-color: #fff !important;
   }
+
+
+/* TreeView specific styling */
+.sidebar .MuiSimpleTreeView-root {
+  padding: 2rem;
+  color: rgba(0, 0, 0, 0.493);
+  font: 200 1rem "Roboto";
+  transition: all 0.5s;
+}
+
+.sidebar .MuiTreeItem-root {
+  color: rgba(0, 0, 0, 0.493);
+}
+
+.sidebar .MuiTreeItem-content {
+  transition: all 0.5s;
+}
+
+.sidebar .MuiTreeItem-content:hover {
+  color: tomato;
+  transform: scale(1.1);
+  background-color: transparent !important;
+}
+
+.sidebar .MuiTreeItem-label {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .MuiTreeItem-iconContainer {
+  margin-right: 0.5rem;
+}
+
+/* Override default selection styling */
+.sidebar .Mui-selected,
+.sidebar .Mui-selected:hover,
+.sidebar .Mui-focused {
+  background-color: transparent !important;
+}
+
+/* Style for the clickable items inside TreeItem */
+.sidebar .tree-item-content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.sidebar .tree-item-content svg {
+  margin-right: 0.5rem;
+}
+
+.sidebar .tree-item-content:hover {
+  color: tomato;
+}
